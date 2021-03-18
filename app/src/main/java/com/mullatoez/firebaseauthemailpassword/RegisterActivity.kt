@@ -1,5 +1,6 @@
 package com.mullatoez.firebaseauthemailpassword
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -37,6 +38,9 @@ class RegisterActivity : AppCompatActivity() {
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
+
+                val intent = Intent(this, DashBoardActivity::class.java)
+                startActivity(intent)
 
                 Toast.makeText(
                     this,
